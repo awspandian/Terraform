@@ -1,0 +1,65 @@
+###Terraform
+	Terraform is IaC (Infrastructure as Code)
+	From Terraform, Infrastructurecan be created in alsmot all the virtual environments (AWS,AZURE,GCP,VMWARE....ETC)
+	Terraform is developed in GO language
+	Terraform is a single exeutable
+	Terraform templates are written in Custom DSL. This DSL mostly looks like JSON.
+	Terraform templates end with .tf extension
+	
+	Installation support 
+	windows 
+	linux (https://www.terraform.io/downloads.html)
+	unzip the file to some folder. Add this folder to PATH environment variables (use export command and add this statement to /etc/envirnoment
+	
+###	Terraform in CD Pipelines
+	
+	Terraform has list of providers supported, each provider provides resources and data sources.
+	Provider is used to create Infrastructure in particular virtual environment.
+	Resource: Resource is part of the Infrastructure created on the provider. every provider provides resources.
+	Datasource: 
+	Variables: to give options for the user to enter different values to resources.
+	Provisioning: Terraform support varios provisioners like shell, chef, powershell.
+
+### Example for creating simple AWS Resource	
+	
+	Service: what cloud provider is offering you
+	Resource: Anything created using Service
+	
+###setup Terraform 
+		Install Terraform
+		install visual studio code
+		
+### Example: Create a vpc in N.V region
+			create new file with .tf extension.
+			to create resources in aws, use aws provider. provder sysax is 
+		'''	
+			provider "aws" {
+				region     = "us-west-2"
+				access_key = "<my-access-key>"
+				secret_key = "<my-secret-key>"
+							}
+	    '''	
+		Note: Input in Terraform are called as arguments and outputs are called as attributes.
+		
+		Now we need to create  a VPC resource. Search the Resources in Documentation page
+		'''
+		https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc
+		'''
+		resource "aws_vpc" "Hippo" {
+			cidr_block = "192.168.0.0/16"
+			instance_tenancy = "default"
+			tags = {
+				"Name" = "TF"
+					} 
+								}
+		'''
+		https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+		'''
+		
+		Now to execute this terraform template, Launch powershell n the directory where the TF templete is there
+		
+		terraform init 
+		terraform --help
+		terraform validate .
+		terraform apply
+		terraform destroy
