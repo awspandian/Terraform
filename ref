@@ -16,7 +16,7 @@
 	Terraform has list of providers supported, each provider provides resources and data sources.
 	Provider is used to create Infrastructure in particular virtual environment.
 	Resource: Resource is part of the Infrastructure created on the provider. every provider provides resources.
-	Datasource: 
+	 
 	Variables: to give options for the user to enter different values to resources.
 	Provisioning: Terraform support varios provisioners like shell, chef, powershell.
 
