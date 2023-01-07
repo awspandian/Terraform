@@ -10,10 +10,6 @@ variable "cidr_block" {
   
 }
 
-variable "subnet_cidrs" {
-    type = list(string)
-}
-
 variable "subnet_name_tags" {
     type = list(string)  
 }
