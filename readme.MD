@@ -59,4 +59,4 @@ Mac System Setup
 	Terraform brew install terraform -y
 Terraform Setup and configuration
 	Create a new folder hello_tf and open visual studio code.
-	In the visual studio code install extension terraform (hashicorpTerraform)
+	In the visual studio code install extension terraform (hashicorpTerraform).
